@@ -1,0 +1,31 @@
+in_photo=imread('D:\Matlab R2021a\examples\images\data\deleteAll.gif');
+for i = [128,64,32,16,8,4,2]
+    syms(['out_photo',num2str(i)]);%定义7个变量来表示灰度值
+    eval(['out_photo',num2str(i),'=histeq(in_photo,i)',';']);%eval给变量赋值
+end
+figure();
+set(figure(1),'NumberTitle','off','Name','图像的灰度级调整');
+subplot(2,4,1);
+imshow(in_photo,[]);
+title('原图');
+subplot(2,4,2);
+imshow(out_photo128,[]);
+title('灰度级128');
+subplot(2,4,3);
+imshow(out_photo64,[]);
+title('灰度级64');
+subplot(2,4,4);
+imshow(out_photo32,[]);
+title('灰度级32');
+subplot(2,4,5);
+imshow(out_photo16,[]);
+title('灰度级16');
+subplot(2,4,6);
+imshow(out_photo8,[]);
+title('灰度级8');
+subplot(2,4,7);
+imshow(out_photo4,[]);
+title('灰度级4');
+subplot(2,4,8);
+imshow(out_photo4,[]);
+title('灰度级2');
